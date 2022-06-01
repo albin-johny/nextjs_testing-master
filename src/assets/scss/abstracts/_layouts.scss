@@ -1,0 +1,168 @@
+@import '../mixins/breakpoints';
+@import '../abstracts/_variables';
+@import '../abstracts/buttons';
+
+
+
+
+.navbar-wrapper {
+    padding: 20px 0;
+    transition: all 0.3 ease-in-out;
+    &--bg-transparent {
+        background-color: rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+        transition: all 0.3s ease-in-out;
+        .btn {
+            &--header-contact {
+                padding: 0.375rem 0.75rem !important;
+                &:hover {
+                    background-color: #fff !important;
+                    color: #f55c4f !important;
+                    border-color: #fff !important;
+                }
+            }
+        }
+    }
+    &--bg-white {
+        background-color: #fff;
+        border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+        transition: all 0.3s ease-in-out;
+        .btn {
+            &--header-contact {
+                padding: 0.375rem 0.75rem !important;
+                @include hoverBtn(#f55c4f, #fff, rgba(245, 92, 79, 0.4));
+            }
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            &:nth-child(even) {
+                @include media-min-md {
+                    margin: 0 35px;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            .nav-link {
+                color: #000;
+                @include print-styles($font-medium);
+                transition: 0.3s ease-in-out;
+                @include media-max-md {
+                    font-size: 20px;
+                }
+                &:hover {
+                    transition: 0.3s ease-in-out;
+                    color: #5a56e9;
+                }
+                &.active {
+                    transition: 0.3s ease-in-out;
+                    color: #5a56e9;
+                }
+            }
+        }
+    }
+    .navbar-toggler {
+        transition: all 0.3s ease-in-out;
+        &:focus-visible {
+            outline: unset;
+        }
+        &:focus {
+            box-shadow: 0 0 0 transparent;
+        }
+        @include media-max-md {
+            margin-left: 60px;
+        }
+        &.toggle-active {
+            transition: all 0.3s ease-in-out;
+            .navbar-toggle-icon {
+                transition: all 0.3s ease-in-out;
+                &:first-child {
+                    transition: all 0.3s ease-in-out;
+                    margin-top: 3px;
+                    transform-origin: center;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:last-child {
+                    transform-origin: center;
+                    transform: rotate(-45deg);
+                    margin-top: -2px;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+        .navbar-toggle-icon {
+            background: #020a19 !important;
+            height: 2px;
+            width: 22px;
+            transition: transform 0.4s;
+            display: block;
+            &:nth-child(2) {
+                margin: 4px 0;
+            }
+        }
+    }
+    .btn--header-contact {
+        transition: all 0.3s ease-in-out;
+        @include media-max-md {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            margin-left: auto;
+        }
+        @include media-max-sm {
+            width: unset;
+        }
+        &.show-toggle-btn {
+            @include media-max-md {
+                opacity: 1;
+                visibility: visible;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    .collapse {
+        &.navbar-collapse {
+            @include media-max-md {
+                display: block;
+                position: fixed;
+                right: 0;
+                top: 79px;
+                transition: all 0.3s ease-in-out;
+                width: 100%;
+                height: 100%;
+                transform: translateX(110%);
+            }
+            ul {
+                transition: all 0.3s ease-in-out;
+                &.navbar-nav {
+                    @include media-max-md {
+                        width: 50%;
+                        height: 100%;
+                        background-color: #fff;
+                        margin-right: unset !important;
+                        padding: 15px 20px;
+                    }
+                    @include media-max-sm {
+                        width: 100%;
+                    }
+                }
+            }
+            &.show-vertical-nav {
+                width: 100%;
+                height: 100%;
+                transition: all 0.3s ease-in-out;
+                transform: translateX(0%);
+                ul {
+                    &.navbar-nav {
+                        transition: all 0.2s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

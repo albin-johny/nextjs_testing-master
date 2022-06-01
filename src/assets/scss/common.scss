@@ -1,0 +1,171 @@
+
+
+
+// common color
+.bg {
+  &-dark-blue {
+    background-color: map-get($bg-colors, bg-dark-blue);
+  }
+  &-light-gray {
+    background-color:  map-get($bg-colors, bg-light-gray);
+  }
+  &-orange {
+    background-color:  map-get($bg-colors, bg-orange);
+  }
+  &-pink {
+    background-color: #fab8c4;
+  }
+}
+
+.text {
+  &-dark-blue {
+    color: map-get($text-color, text-dark-blue);
+  }
+  &-custom {
+    color: map-get($text-color, text-custom);
+  }
+  &-yellow {
+    color: map-get($text-color, text-yellow);
+  }
+  &-blue {
+    color: #5a56e9;
+  }
+}
+
+// font
+.font-medium-bold {
+  @include print-styles($font-medium-bold);
+}
+
+// common padding
+.px-max-md-0 {
+  @include media-max-md {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.active-img {
+  background-color: map-get($bg-colors, bg-sky-blue);
+}
+
+.text-ellipse-line-2 {
+  @include textLineEllipsis(2);
+}
+.text-ellipse-line-3 {
+  @include textLineEllipsis(3);
+}
+.flex-1 {
+  @include flexSize(1);
+}
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  @include print-styles($font-medium-bold);
+}
+
+// Addition service module
+.additional-service__list {
+  &:first-child,
+  &:last-child {
+      .card-title {
+          max-width: 114px;
+      }
+  }
+}
+
+
+.content-wrapper {
+  .content {
+      &-sub-title {
+        font-size: 26px;
+        color: #5a56e9;
+        @include media-max-xl {
+          font-size: 16px;
+        }
+        @include media-max-md {
+          text-align: center;
+        }
+        @include media-max-sm {
+          font-size: 16px;
+        }
+      }
+      &-title {
+          font-size: 3.2rem;
+          @include print-styles($font-medium);
+          color: #000;
+          @include media-max-xl {
+            font-size: 33px;
+          }
+          @include media-max-md {
+            text-align: center;
+          }
+          @include media-max-sm {
+            font-size: 23px;
+          }
+      }
+      &-description {
+          font-size: 18px;
+          color: #7d7d7d;
+          @include print-styles($font-regular);
+          opacity: 0.7;
+          margin-bottom: 0;
+          @include media-max-xl {
+            font-size: 16px;
+          }
+          @include media-max-md {
+            text-align: center;
+          }
+          @include media-max-sm {
+            font-size: 14px;
+          }
+      }
+  }
+}
+
+// .content-data-wrapper {
+//   &__img {
+//     position: relative;
+//     height: 100%;
+//   }
+// }
+
+.circle {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  z-index: -1;
+  &-yellow {
+    background-color: #ffdb60;
+  }
+  &-pink {
+    background-color: #fab8c2;
+  }
+  &-blue {
+    background-color: #5a56e9;
+  }
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #000;
+  text-align: center;
+  margin: 0;
+}
+
+.show-shadow {
+  background: rgba(0,0,0,.6);
+  overflow: hidden;
+  height: 100%;
+}
+
+.container-md {
+  @include media-max-md {
+    max-width: 88%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,47 @@
+
+
+
+
+.discover_data_wrapper {
+    padding: 2rem 0 2rem;
+    @include media-min-xl {
+        padding: 6rem 0 2rem;
+    }
+    .circle-3d-icon {
+        right: 10%;
+        left: unset;
+    }
+    .cube-3d-icon {
+        right: 16%;
+        left: unset;
+    }
+    .hollow-3d-icon {
+        left: 4%;
+        right: unset;
+    }
+    .pyramid-3d-icon {
+        left: 16%;
+        right: unset;
+    }
+}
+
+
+.contact-form-box {
+    border-radius: 10px;
+    height: 600px;
+    max-width: 600px;
+    width: 100%;
+    padding: 27px;
+    background-color: #002753;
+    // box-shadow: inset 0px 1px 11px 0px rgb(215 103 112);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-form {
+    background-color: unset;
+    // max-width: 373px;
+    // @include media-max-sm {
+        width: 100%;
+    // }
+}

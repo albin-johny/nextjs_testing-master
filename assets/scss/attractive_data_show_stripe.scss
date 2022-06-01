@@ -1,0 +1,11 @@
+
+.attractive-data-show-wrapper {
+    &__inner-box {
+        padding: 3rem 7rem;
+        border-radius: 70px;
+        @include media-max-lg {
+            padding: 2rem 1.5rem;
+            border-radius: 22px;
+        }
+    }
+}

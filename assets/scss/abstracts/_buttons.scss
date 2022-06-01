@@ -1,0 +1,46 @@
+
+@import "~scss/abstracts/_common_fun.scss";
+
+
+
+
+.btn {
+    font-size: 16px;
+    transition: 0.1s ease-in-out;
+    background-color: #f5f5f5;
+    display: inline-block;
+    padding: 10px 50px;
+
+    &.disabled {
+        cursor: not-allowed;
+    }
+    &:focus {
+        box-shadow: none !important;
+        outline: none !important;
+        box-shadow: unset !important;
+    }
+    @include media-max-sm {
+        width: 100%;
+        margin-top: 5px;
+    }
+    &-full-w {
+        width: 100%;
+    }
+}
+.btn-orange {
+    @include hoverBtn(#f55c4f, #fff, rgba(245, 92, 79, 0.4));
+}
+.btn-blue {
+    @include hoverBtn(#5a56e9, #fff, rgba(90, 86, 233, 0.3));
+}
+.btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.btn-ovel {
+    border-radius: 46px;
+    padding: 7px 33px;
+}

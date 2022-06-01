@@ -1,0 +1,80 @@
+@import "~scss/mixins/_breakpoints.scss";
+
+
+
+
+.toggle-bar {
+	cursor: pointer;
+	overflow: hidden;
+	width: 32px;
+	height: 25px;
+	// background: #fff;
+	// border-radius: 10px;
+	// box-shadow: 0 3px 7px 0 #000;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.line-toggle-bar {
+		&:nth-child(2) {
+			transition-delay: .12s;
+		}
+	}
+    @include media-max-md-x {
+        width: 28px;
+        height: 25px;
+    }
+}
+.line-toggle-bar {
+	position: absolute;
+	display: block;
+	width: 75px;
+	height: 3px;
+	background: #fff;
+	border-radius: 3px;
+	transition: all .6s;
+	&:first-child {
+		transform: translateY(-11px) translateX(-12px);
+		width: 25px;
+		transition-delay: 0s;
+        @include media-max-md-x {
+            transform: translateY(-9px) translateX(-12px);
+        }
+	}
+	&:last-child {
+		transform: translateY(11px) translateX(-22px);
+		width: 30px;
+		transition-delay: 0s;
+        @include media-max-md-x {
+            transform: translateY(9px) translateX(-22px);
+        }
+	}
+}
+.toggle-bar.activate {
+	.line-toggle-bar {
+		&:first-child {
+			background: #fff;
+			transform: translateY(0) translateX(0) rotate(45deg);
+			width: 44px;
+			height: 3px;
+			transition-delay: .1s;
+            @include media-max-md-x {
+                width: 28px;
+            }
+		}
+		&:nth-child(2) {
+			transform: translateX(110px);
+			transition-delay: 0s;
+		}
+		&:last-child {
+			background: #fff;
+			transform: translateY(0) translateX(0) rotate(314deg);
+			width: 44px;
+			height: 3px;
+			transition-delay: .1s;
+            @include media-max-md-x {
+                width: 28px;
+            }
+		}
+	}
+}
